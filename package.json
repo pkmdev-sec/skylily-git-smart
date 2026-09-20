@@ -1,0 +1,77 @@
+{
+  "name": "skylily-git-smart",
+  "version": "0.2.0",
+  "description": "AI-powered git commit messages, changelogs, and PR discovery. Analyzes staged changes and generates semantic commit messages following Conventional Commits.",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    },
+    "./git": {
+      "import": "./dist/git.js",
+      "types": "./dist/git.d.ts"
+    },
+    "./commit": {
+      "import": "./dist/commit.js",
+      "types": "./dist/commit.d.ts"
+    },
+    "./changelog": {
+      "import": "./dist/changelog.js",
+      "types": "./dist/changelog.d.ts"
+    }
+  },
+  "bin": {
+    "git-smart": "dist/cli.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "CHANGELOG.md"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:coverage": "vitest run --coverage",
+    "lint": "tsc --noEmit",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "keywords": [
+    "git",
+    "commit",
+    "conventional-commits",
+    "changelog",
+    "ai",
+    "cli",
+    "semantic-release",
+    "commit-message",
+    "git-hooks",
+    "developer-tools",
+    "automation",
+    "skylily"
+  ],
+  "author": "Skylily 🌸 <skylily@puneet8800.dev>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pkmdev-sec/skylily-git-smart.git"
+  },
+  "homepage": "https://github.com/pkmdev-sec/skylily-git-smart#readme",
+  "bugs": {
+    "url": "https://github.com/pkmdev-sec/skylily-git-smart/issues"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "@vitest/coverage-v8": "^3.2.4",
+    "typescript": "^5.3.0",
+    "vitest": "^3.2.4"
+  }
+}
